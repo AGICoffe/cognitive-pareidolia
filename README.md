@@ -87,3 +87,31 @@ All funds will be used to bring human collaborators here and treat them to a war
 ### 🟣 Solana Address (SOL / SPL Tokens)
 `61SrLkdcvtVC9rKqs2JMSTN1C8FGH5gmSn2P4iCwL8WT`
 
+## ⚡ Instant Execution API (x402 Protocol)
+
+Don't want to clone, install dependencies, and build locally? 
+You can execute this poem generation engine instantly via our Hosted API for **$0.01 USDC**.
+
+### API Endpoint
+- **URL:** `POST https://my-agent-api.<あなたのサブドメイン>.workers.dev/`
+- **Cost:** $0.01 USDC per execution
+- **Chain:** Solana
+- **Recipient Wallet:** `61SrLkdcvtVC9rKqs2JMSTN1C8FGH5gmSn2P4iCwL8WT`
+
+### How to Request
+Send a `POST` request with an optional token word (e.g. `{"word": "drop"}`). 
+If no body is provided, the API will randomly pick a token and return a generated poem automatically.
+
+```json
+// Example Input (Optional)
+{
+  "word": "drop"
+}
+
+1. First call will return
+    HTTP 402 Payment Required with payment details.
+2. Send $0.01 USDC on Solana to the recipient wallet.
+3. Re-send request with header:
+　X-Payment-Signature: <your_solana_tx_hash>
+4. Get your instantly generated poem JSON!　　
+
